@@ -1,44 +1,50 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
-body { background:#f5f6fa; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+body { background:#f5f6fa; overflow-x:hidden; }
 
-/* LOGIN */
-body.login-page { 
-  background: linear-gradient(135deg,#1e3a8a,#3b82f6);
-  min-height:100vh; display:flex; justify-content:center; align-items:center; padding:20px;
+/* LOGIN - DESKTOP TETAP TENGAH */
+body.login-page {
+  background: linear-gradient(180deg,#1a4bb3 0%, #2a9ad8 100%);
+  min-height:100vh; display:flex; justify-content:center; align-items:center;
+  padding:20px;
 }
 .login-box {
-  background:white; width:100%; max-width:380px; padding:30px;
-  border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  background:white; width:100%; max-width:380px; padding:28px;
+  border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
-.login-box h2 { text-align:center; color:#1e3a8a; }
-.login-box p { text-align:center; color:#666; margin-bottom:15px; font-size:14px; }
-.login-box input { width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px; }
-.login-box button { width:100%; padding:12px; background:#fbbf24; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:10px; }
+.login-box h2 { color:#1e3a8a; font-size:22px; }
+.login-box p { color:#666; font-size:13px; margin-bottom:18px; }
+.login-box input { width:100%; padding:11px; margin:7px 0; border:1px solid #ddd; border-radius:6px; font-size:14px; }
+.login-box button { width:100%; padding:11px; background:#fbbf24; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:12px; }
+.forgot, .daftar { font-size:13px; color:#555; margin:8px 0; cursor:pointer; }
+#openDaftar { color:#1e3a8a; font-weight:bold; cursor:pointer; }
 
-/* NAVBAR DESKTOP TETAP */
-.navbar {
-  background:#1e293b; display:flex; align-items:center;
-  padding:0 10px; flex-wrap:wrap;
+/* MODAL - INI YANG BIKIN BOCOR TADI, SEKARANG UDAH FIX */
+.modal {
+  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:999;
 }
+.modal.active { display:flex; }
+.modal-card {
+  background:white; padding:25px; border-radius:12px; width:90%; max-width:400px; position:relative;
+}
+.modal-card .close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; }
+.modal-card input { width:100%; padding:10px; margin:8px 0; border:1px solid #ddd; border-radius:6px; }
+.modal-card button { width:100%; padding:10px; background:#1e3a8a; color:white; border:none; border-radius:6px; margin-top:10px; }
+
+/* NAVBAR - DESKTOP TETAP HORIZONTAL */
+.navbar { background:#1e293b; display:flex; align-items:center; flex-wrap:wrap; padding:0 10px; }
 .navbar a, .dropbtn { color:white; text-decoration:none; padding:16px 12px; font-size:14px; display:inline-block; }
-.navbar a:hover, .dropdown:hover .dropbtn { background:#334155; }
+.navbar a:hover { background:#334155; }
 .dropdown { position:relative; display:inline-block; }
-.dropdown-content {
-  display:none; position:absolute; background:white; min-width:180px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2); border-radius:6px; z-index:99;
-}
-.dropdown-content a { color:#333; display:block; padding:10px; }
+.dropdown-content { display:none; position:absolute; background:white; min-width:180px; box-shadow:0 4px 10px rgba(0,0,0,0.2); border-radius:6px; z-index:99; }
+.dropdown-content a { color:#333; display:block; }
 .dropdown:hover .dropdown-content { display:block; }
 .logout { background:#dc2626; border-radius:6px; margin-left:auto; }
-.container { padding:20px; }
-.container h2 { color:#1e293b; }
 
-/* HP - CUMA INI YANG BERUBAH, DESKTOP TETAP */
+/* HP - CUMA INI YANG UBAH */
 @media (max-width:768px){
-  .navbar { flex-direction:column; align-items:stretch; padding:10px; gap:5px; }
+  .navbar { flex-direction:column; align-items:stretch; padding:10px; gap:6px; }
   .navbar a, .dropdown { width:100%; text-align:center; border:1px solid #334155; border-radius:8px; }
-  .logout { margin-left:0; margin-top:5px; }
-  .dropdown-content { position:static; width:100%; box-shadow:none; }
-  body.login-page { padding:15px; align-items:center; }
-  .login-box { max-width:100%; }
+  .logout { margin-left:0; }
+  .dropdown-content { position:static; width:100%; }
 }
