@@ -1,64 +1,44 @@
-/* SITTA FINAL - FIX HP 100% RAPI */
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
-body { background:#f5f6fa; overflow-x:hidden; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+body { background:#f5f6fa; }
 
-/* === LOGIN FIX BIAR GAK KEPOTONG DI HP === */
-body.login-page {
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
+/* LOGIN */
+body.login-page { 
+  background: linear-gradient(135deg,#1e3a8a,#3b82f6);
+  min-height:100vh; display:flex; justify-content:center; align-items:center; padding:20px;
 }
 .login-box {
-  background:white;
-  width:100%;
-  max-width:380px;
-  padding:30px 25px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  background:white; width:100%; max-width:380px; padding:30px;
+  border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
-.login-box h1 { color:#1e3a8a; font-size:28px; text-align:center; }
-.login-box p { text-align:center; color:#666; margin-bottom:20px; font-size:14px; }
-.login-box input {
-  width:100%; padding:12px 15px; margin:8px 0;
-  border:1px solid #ddd; border-radius:8px; font-size:16px;
-}
-.login-box button {
-  width:100%; padding:12px; background:#fbbf24; border:none;
-  border-radius:8px; font-weight:bold; margin-top:15px; font-size:16px;
-}
+.login-box h2 { text-align:center; color:#1e3a8a; }
+.login-box p { text-align:center; color:#666; margin-bottom:15px; font-size:14px; }
+.login-box input { width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px; }
+.login-box button { width:100%; padding:12px; background:#fbbf24; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:10px; }
 
-/* === NAVBAR DASHBOARD RAPI DI HP === */
+/* NAVBAR DESKTOP TETAP */
 .navbar {
-  background:#1e293b;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  padding:10px;
-  gap:5px;
+  background:#1e293b; display:flex; align-items:center;
+  padding:0 10px; flex-wrap:wrap;
 }
-.navbar a {
-  color:white; text-decoration:none; padding:10px 12px;
-  font-size:14px; border-radius:6px; white-space:nowrap;
+.navbar a, .dropbtn { color:white; text-decoration:none; padding:16px 12px; font-size:14px; display:inline-block; }
+.navbar a:hover, .dropdown:hover .dropbtn { background:#334155; }
+.dropdown { position:relative; display:inline-block; }
+.dropdown-content {
+  display:none; position:absolute; background:white; min-width:180px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2); border-radius:6px; z-index:99;
 }
-.navbar a:hover { background:#334155; }
-.navbar .logout {
-  background:#dc2626; margin-left:auto;
-}
+.dropdown-content a { color:#333; display:block; padding:10px; }
+.dropdown:hover .dropdown-content { display:block; }
+.logout { background:#dc2626; border-radius:6px; margin-left:auto; }
+.container { padding:20px; }
+.container h2 { color:#1e293b; }
 
-/* CONTENT */
-.content { padding:15px; }
-.card {
-  background:white; padding:20px; border-radius:12px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05); margin-top:15px;
-}
-
-/* KHUSUS HP */
-@media (max-width:600px){
-  .navbar { justify-content:center; }
-  .navbar a { font-size:13px; padding:8px 10px; flex:1 1 45%; text-align:center; border:1px solid #334155; }
-  .navbar .logout { flex:1 1 100%; text-align:center; margin-top:5px; }
-  .login-box { padding:20px; margin:10px; }
+/* HP - CUMA INI YANG BERUBAH, DESKTOP TETAP */
+@media (max-width:768px){
+  .navbar { flex-direction:column; align-items:stretch; padding:10px; gap:5px; }
+  .navbar a, .dropdown { width:100%; text-align:center; border:1px solid #334155; border-radius:8px; }
+  .logout { margin-left:0; margin-top:5px; }
+  .dropdown-content { position:static; width:100%; box-shadow:none; }
+  body.login-page { padding:15px; align-items:center; }
+  .login-box { max-width:100%; }
 }
