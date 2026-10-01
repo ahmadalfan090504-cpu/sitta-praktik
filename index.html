@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login SITTA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-page">
+    <div class="login-box">
+        <h2>SITTA</h2>
+        <p>Sistem Informasi Bahan Ajar</p>
+        <input type="text" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <div class="forgot" id="openLupa">Lupa Password?</div>
+        <button id="btnMasuk">Masuk</button>
+        <div class="daftar">Belum punya akun? <span id="openDaftar">Daftar Akun Baru</span></div>
+    </div>
+
+    <div id="modalLupa" class="modal">
+        <div class="modal-card"><span class="close" id="closeLupa">&times;</span>
+            <h4>Lupa Password</h4><input type="text" placeholder="Masukkan Email"><button>Kirim</button></div>
+    </div>
+    <div id="modalDaftar" class="modal">
+        <div class="modal-card"><span class="close" id="closeDaftar">&times;</span>
+            <h4>Daftar Akun Baru</h4><input type="text" placeholder="Nama Lengkap"><input type="text" placeholder="Email"><input type="password" placeholder="Password"><button>Daftar</button></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
